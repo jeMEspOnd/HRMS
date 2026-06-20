@@ -1,1 +1,116 @@
-<p>dashboard works!</p>
+<section class="dashboard">
+  <div class="page-header">
+    <div>
+      <p class="eyebrow">Dashboard</p>
+      <h2>Workforce overview</h2>
+      <p class="subtitle">Monitor people operations, attendance, leave, and hiring activity.</p>
+    </div>
+
+    <div class="header-actions">
+      <a routerLink="/employees/create">Add Employee</a>
+      <a routerLink="/attendance">View Attendance</a>
+    </div>
+  </div>
+
+  <div class="metric-grid">
+    @for (metric of metrics; track metric.label) {
+      <article class="metric-card">
+        <span>{{ metric.label }}</span>
+        <strong>{{ metric.value }}</strong>
+        <p>{{ metric.detail }}</p>
+      </article>
+    }
+  </div>
+
+  <div class="dashboard-grid">
+    <article class="panel attendance-panel">
+      <div class="panel-header">
+        <div>
+          <h3>Today's Attendance</h3>
+          <p>Live summary across all departments</p>
+        </div>
+        <span class="status-pill">Healthy</span>
+      </div>
+
+      <div class="attendance-ring" aria-label="93 percent attendance">
+        <strong>93%</strong>
+        <span>Present</span>
+      </div>
+
+      <div class="attendance-breakdown">
+        <div>
+          <span>Present</span>
+          <strong>231</strong>
+        </div>
+        <div>
+          <span>Late</span>
+          <strong>9</strong>
+        </div>
+        <div>
+          <span>Absent</span>
+          <strong>8</strong>
+        </div>
+      </div>
+    </article>
+
+    <article class="panel">
+      <div class="panel-header">
+        <div>
+          <h3>Department Strength</h3>
+          <p>Headcount distribution</p>
+        </div>
+        <a routerLink="/departments">Manage</a>
+      </div>
+
+      <div class="department-list">
+        @for (department of departments; track department.name) {
+          <div class="department-row">
+            <div>
+              <strong>{{ department.name }}</strong>
+              <span>{{ department.headcount }} employees</span>
+            </div>
+            <div class="progress-track" aria-hidden="true">
+              <span [style.width.%]="department.progress"></span>
+            </div>
+          </div>
+        }
+      </div>
+    </article>
+
+    <article class="panel wide-panel">
+      <div class="panel-header">
+        <div>
+          <h3>Recent Activity</h3>
+          <p>Latest HR operations queue</p>
+        </div>
+        <a routerLink="/leaves/apply">Apply Leave</a>
+      </div>
+
+      <div class="activity-list">
+        @for (activity of activities; track activity.title) {
+          <div class="activity-item">
+            <span class="activity-dot"></span>
+            <p>{{ activity.title }}</p>
+            <time>{{ activity.time }}</time>
+          </div>
+        }
+      </div>
+    </article>
+
+    <article class="panel quick-panel">
+      <div class="panel-header">
+        <div>
+          <h3>Quick Actions</h3>
+          <p>Common admin tasks</p>
+        </div>
+      </div>
+
+      <div class="quick-actions">
+        <a routerLink="/employees">Employee Directory</a>
+        <a routerLink="/employees/create">Create Employee</a>
+        <a routerLink="/attendance">Attendance Logs</a>
+        <a routerLink="/departments">Departments</a>
+      </div>
+    </article>
+  </div>
+</section>

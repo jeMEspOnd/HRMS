@@ -1,7 +1,21 @@
 <header class="topbar">
-  <div>
-    <h1>HRMS</h1>
-    <p>Human Resource Management System</p>
+  <div class="topbar-title">
+    <button
+      type="button"
+      class="menu-button"
+      aria-label="Toggle sidebar"
+      [attr.aria-expanded]="!isSidebarCollapsed()"
+      (click)="sidebarToggle.emit()"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <div>
+      <h1>HRMS</h1>
+      <p>Human Resource Management System</p>
+    </div>
   </div>
 
   <a routerLink="/login">Login</a>

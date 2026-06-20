@@ -1,1 +1,87 @@
-<p>employee-list works!</p>
+<section class="employee-page">
+  <div class="page-header">
+    <div>
+      <p class="eyebrow">Employees</p>
+      <h2>Employee directory</h2>
+      <p class="subtitle">Manage employee records, department assignments, and employment status.</p>
+    </div>
+
+    <a class="primary-action" routerLink="/employees/create">Add Employee</a>
+  </div>
+
+  <div class="summary-grid">
+    @for (item of summary; track item.label) {
+      <article class="summary-card">
+        <span>{{ item.label }}</span>
+        <strong>{{ item.value }}</strong>
+      </article>
+    }
+  </div>
+
+  <section class="directory-panel">
+    <div class="toolbar">
+      <div class="search-field">
+        <span aria-hidden="true">⌕</span>
+        <input type="search" placeholder="Search employees" aria-label="Search employees" />
+      </div>
+
+      <div class="filters">
+        <select aria-label="Filter by department">
+          <option>All departments</option>
+          <option>Engineering</option>
+          <option>Finance</option>
+          <option>Operations</option>
+          <option>Sales</option>
+        </select>
+
+        <select aria-label="Filter by status">
+          <option>All status</option>
+          <option>Active</option>
+          <option>On Leave</option>
+          <option>Probation</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Employee</th>
+            <th>Role</th>
+            <th>Department</th>
+            <th>Location</th>
+            <th>Status</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (employee of employees; track employee.id) {
+            <tr>
+              <td>
+                <div class="employee-cell">
+                  <span class="avatar">{{ initials(employee.name) }}</span>
+                  <div>
+                    <strong>{{ employee.name }}</strong>
+                    <span>{{ employee.email }}</span>
+                  </div>
+                </div>
+              </td>
+              <td>{{ employee.role }}</td>
+              <td>{{ employee.department }}</td>
+              <td>{{ employee.location }}</td>
+              <td>
+                <span class="status" [class.leave]="employee.status === 'On Leave'" [class.probation]="employee.status === 'Probation'">
+                  {{ employee.status }}
+                </span>
+              </td>
+              <td>
+                <a class="row-action" [routerLink]="['/employees', employee.id, 'edit']">Edit</a>
+              </td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  </section>
+</section>

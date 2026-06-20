@@ -1,1 +1,29 @@
-<p>leave-apply works!</p>
+<section class="leave-page">
+  <div class="page-header">
+    <div>
+      <p class="eyebrow">Leave</p>
+      <h2>Apply leave</h2>
+      <p class="subtitle">Submit leave requests with dates, approver, and reason.</p>
+    </div>
+  </div>
+
+  <div class="leave-layout">
+    <form class="leave-form" [formGroup]="leaveForm" (ngSubmit)="submit()" novalidate>
+      <label><span>Leave type</span><select formControlName="leaveType"><option>Casual Leave</option><option>Sick Leave</option><option>Earned Leave</option><option>Work From Home</option></select></label>
+      <div class="date-grid">
+        <label><span>From date</span><input type="date" formControlName="fromDate" /></label>
+        <label><span>To date</span><input type="date" formControlName="toDate" /></label>
+      </div>
+      <label><span>Approver</span><select formControlName="approver"><option>Ananya Sharma</option><option>Rahul Mehta</option><option>Karan Patel</option></select></label>
+      <label><span>Reason</span><textarea rows="5" formControlName="reason" placeholder="Describe your leave reason"></textarea></label>
+      <button type="submit">Submit Request</button>
+    </form>
+
+    <aside class="balance-card">
+      <h3>Leave balance</h3>
+      <div><span>Casual Leave</span><strong>08 days</strong></div>
+      <div><span>Sick Leave</span><strong>06 days</strong></div>
+      <div><span>Earned Leave</span><strong>12 days</strong></div>
+    </aside>
+  </div>
+</section>

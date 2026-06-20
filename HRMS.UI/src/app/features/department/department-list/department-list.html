@@ -1,1 +1,32 @@
-<p>department-list works!</p>
+<section class="department-page">
+  <div class="page-header">
+    <div>
+      <p class="eyebrow">Departments</p>
+      <h2>Department management</h2>
+      <p class="subtitle">Track department ownership, staffing, budgets, and hiring load.</p>
+    </div>
+    <button type="button">Add Department</button>
+  </div>
+
+  <div class="department-grid">
+    @for (department of departments; track department.name) {
+      <article class="department-card">
+        <div class="card-header">
+          <div>
+            <h3>{{ department.name }}</h3>
+            <p>{{ department.manager }}</p>
+          </div>
+          <span>{{ department.openRoles }} roles</span>
+        </div>
+        <div class="stats">
+          <div><strong>{{ department.employees }}</strong><span>Employees</span></div>
+          <div><strong>{{ department.budget }}</strong><span>Budget</span></div>
+        </div>
+        <div class="progress">
+          <div><span>Team health</span><strong>{{ department.health }}%</strong></div>
+          <div class="track"><span [style.width.%]="department.health"></span></div>
+        </div>
+      </article>
+    }
+  </div>
+</section>

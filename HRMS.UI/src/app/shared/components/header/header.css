@@ -9,6 +9,32 @@
   background: #ffffff;
 }
 
+.topbar-title {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.menu-button {
+  display: inline-grid;
+  width: 40px;
+  height: 40px;
+  place-content: center;
+  gap: 4px;
+  border: 1px solid #cfd8e6;
+  border-radius: 8px;
+  background: #ffffff;
+  cursor: pointer;
+}
+
+.menu-button span {
+  display: block;
+  width: 18px;
+  height: 2px;
+  border-radius: 999px;
+  background: #172033;
+}
+
 .topbar h1 {
   margin: 0;
   color: #172033;

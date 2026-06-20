@@ -1,1 +1,122 @@
-<p>employee-create works!</p>
+<section class="employee-create-page">
+  <div class="page-header">
+    <div>
+      <p class="eyebrow">Employees</p>
+      <h2>Add employee</h2>
+      <p class="subtitle">Create a new employee profile with role, department, and joining details.</p>
+    </div>
+
+    <a routerLink="/employees">Back to Directory</a>
+  </div>
+
+  <form class="employee-form" [formGroup]="employeeForm" (ngSubmit)="submit()" novalidate>
+    <section class="form-panel">
+      <div class="section-title">
+        <h3>Personal Information</h3>
+        <p>Basic employee contact details.</p>
+      </div>
+
+      <div class="form-grid">
+        <label>
+          <span>First name</span>
+          <input type="text" formControlName="firstName" placeholder="Enter first name" />
+        </label>
+
+        <label>
+          <span>Last name</span>
+          <input type="text" formControlName="lastName" placeholder="Enter last name" />
+        </label>
+
+        <label>
+          <span>Email address</span>
+          <input type="email" formControlName="email" placeholder="employee@company.com" />
+        </label>
+
+        <label>
+          <span>Phone number</span>
+          <input type="tel" formControlName="phone" placeholder="+91 98765 43210" />
+        </label>
+      </div>
+    </section>
+
+    <section class="form-panel">
+      <div class="section-title">
+        <h3>Job Details</h3>
+        <p>Assign department, role, manager, and work location.</p>
+      </div>
+
+      <div class="form-grid">
+        <label>
+          <span>Department</span>
+          <select formControlName="department">
+            <option>Engineering</option>
+            <option>Human Resources</option>
+            <option>Finance</option>
+            <option>Operations</option>
+            <option>Sales</option>
+          </select>
+        </label>
+
+        <label>
+          <span>Designation</span>
+          <input type="text" formControlName="designation" placeholder="Software Engineer" />
+        </label>
+
+        <label>
+          <span>Employee type</span>
+          <select formControlName="employeeType">
+            <option>Full Time</option>
+            <option>Part Time</option>
+            <option>Contract</option>
+            <option>Intern</option>
+          </select>
+        </label>
+
+        <label>
+          <span>Joining date</span>
+          <input type="date" formControlName="joiningDate" />
+        </label>
+
+        <label>
+          <span>Work location</span>
+          <select formControlName="location">
+            <option>Bengaluru</option>
+            <option>Hyderabad</option>
+            <option>Mumbai</option>
+            <option>Pune</option>
+            <option>Chennai</option>
+          </select>
+        </label>
+
+        <label>
+          <span>Reporting manager</span>
+          <input type="text" formControlName="manager" placeholder="Manager name" />
+        </label>
+      </div>
+    </section>
+
+    <section class="form-panel">
+      <div class="section-title">
+        <h3>Compensation & Notes</h3>
+        <p>Optional payroll notes and internal context.</p>
+      </div>
+
+      <div class="form-grid">
+        <label>
+          <span>Annual salary</span>
+          <input type="number" formControlName="salary" placeholder="800000" />
+        </label>
+
+        <label class="wide-field">
+          <span>Notes</span>
+          <textarea formControlName="notes" rows="4" placeholder="Add onboarding notes"></textarea>
+        </label>
+      </div>
+    </section>
+
+    <div class="form-actions">
+      <a routerLink="/employees">Cancel</a>
+      <button type="submit">Save Employee</button>
+    </div>
+  </form>
+</section>

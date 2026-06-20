@@ -1,0 +1,166 @@
+.employee-create-page {
+  display: grid;
+  gap: 24px;
+}
+
+.page-header,
+.form-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.eyebrow,
+.subtitle,
+.section-title p {
+  color: #667085;
+}
+
+.eyebrow {
+  margin: 0 0 6px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+h2 {
+  color: #172033;
+  font-size: 32px;
+}
+
+.subtitle {
+  margin-top: 8px;
+}
+
+a {
+  border: 1px solid #cfd8e6;
+  border-radius: 8px;
+  color: #172033;
+  padding: 10px 12px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.employee-form {
+  display: grid;
+  gap: 18px;
+}
+
+.form-panel {
+  display: grid;
+  grid-template-columns: 260px minmax(0, 1fr);
+  gap: 28px;
+  border: 1px solid #dfe7f1;
+  border-radius: 8px;
+  padding: 24px;
+  background: #ffffff;
+  box-shadow: 0 14px 34px rgb(16 35 56 / 7%);
+}
+
+.section-title h3 {
+  color: #172033;
+  font-size: 20px;
+}
+
+.section-title p {
+  margin-top: 6px;
+  line-height: 1.5;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+label {
+  display: grid;
+  gap: 8px;
+  color: #344054;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  border: 1px solid #cfd8e6;
+  border-radius: 8px;
+  padding: 12px 14px;
+  color: #172033;
+  font: inherit;
+  outline: none;
+}
+
+textarea {
+  resize: vertical;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: #1d6f8f;
+  box-shadow: 0 0 0 3px rgb(29 111 143 / 14%);
+}
+
+.wide-field {
+  grid-column: span 2;
+}
+
+.form-actions {
+  justify-content: flex-end;
+  border: 1px solid #dfe7f1;
+  border-radius: 8px;
+  padding: 16px;
+  background: #ffffff;
+}
+
+button {
+  border: 0;
+  border-radius: 8px;
+  padding: 11px 16px;
+  background: #1d6f8f;
+  color: #ffffff;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 700;
+}
+
+button:hover {
+  background: #175f7b;
+}
+
+@media (max-width: 980px) {
+  .form-panel {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 760px) {
+  .page-header,
+  .form-actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  h2 {
+    font-size: 26px;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .wide-field {
+    grid-column: auto;
+  }
+}

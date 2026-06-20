@@ -10,4 +10,10 @@ import { Sidebar } from '../../shared/components/sidebar/sidebar';
   templateUrl: './admin-layout.html',
   styleUrl: './admin-layout.css',
 })
-export class AdminLayout {}
+export class AdminLayout {
+  protected isSidebarCollapsed = false;
+
+  protected toggleSidebar(): void {
+    this.isSidebarCollapsed = !this.isSidebarCollapsed;
+  }
+}

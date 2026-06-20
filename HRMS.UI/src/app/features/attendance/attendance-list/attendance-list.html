@@ -1,1 +1,35 @@
-<p>attendance-list works!</p>
+<section class="attendance-page">
+  <div class="page-header">
+    <div>
+      <p class="eyebrow">Attendance</p>
+      <h2>Attendance log</h2>
+      <p class="subtitle">Daily attendance overview with check-in, check-out, and status.</p>
+    </div>
+    <input type="date" aria-label="Attendance date" />
+  </div>
+
+  <div class="summary-grid">
+    <article><span>Present</span><strong>231</strong></article>
+    <article><span>Late</span><strong>09</strong></article>
+    <article><span>On Leave</span><strong>18</strong></article>
+    <article><span>Absent</span><strong>08</strong></article>
+  </div>
+
+  <section class="table-panel">
+    <table>
+      <thead><tr><th>Employee</th><th>Department</th><th>Check In</th><th>Check Out</th><th>Hours</th><th>Status</th></tr></thead>
+      <tbody>
+        @for (record of records; track record.name) {
+          <tr>
+            <td>{{ record.name }}</td>
+            <td>{{ record.department }}</td>
+            <td>{{ record.checkIn }}</td>
+            <td>{{ record.checkOut }}</td>
+            <td>{{ record.hours }}</td>
+            <td><span class="status" [class.late]="record.status === 'Late'" [class.leave]="record.status === 'Leave'">{{ record.status }}</span></td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  </section>
+</section>

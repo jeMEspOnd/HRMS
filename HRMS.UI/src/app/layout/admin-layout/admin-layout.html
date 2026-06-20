@@ -1,8 +1,11 @@
-<div class="admin-shell">
+<div class="admin-shell" [class.sidebar-collapsed]="isSidebarCollapsed">
   <app-sidebar />
 
   <div class="admin-main">
-    <app-header />
+    <app-header
+      [isSidebarCollapsed]="isSidebarCollapsed"
+      (sidebarToggle)="toggleSidebar()"
+    />
 
     <main class="admin-content">
       <router-outlet />
