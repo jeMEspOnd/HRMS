@@ -11,12 +11,12 @@ import { LeaveApply } from './features/leave/leave-apply/leave-apply';
 import { AdminLayout } from './layout/admin-layout/admin-layout';
 
 export const routes: Routes = [
+  { path: '', pathMatch: 'full', redirectTo: 'login' },
   { path: 'login', component: Login },
   {
     path: '',
     component: AdminLayout,
     children: [
-      { path: '', pathMatch: 'full', redirectTo: 'dashboard' },
       { path: 'dashboard', component: Dashboard },
       { path: 'employees', component: EmployeeList },
       { path: 'employees/create', component: EmployeeCreate },
