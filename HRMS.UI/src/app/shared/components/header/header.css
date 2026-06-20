@@ -1,0 +1,31 @@
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  min-height: 72px;
+  padding: 14px 24px;
+  border-bottom: 1px solid #e0e6ef;
+  background: #ffffff;
+}
+
+.topbar h1 {
+  margin: 0;
+  color: #172033;
+  font-size: 22px;
+  line-height: 1.2;
+}
+
+.topbar p {
+  margin: 2px 0 0;
+  color: #667085;
+  font-size: 14px;
+}
+
+.topbar a {
+  border: 1px solid #cfd8e6;
+  border-radius: 8px;
+  color: #172033;
+  padding: 8px 12px;
+  text-decoration: none;
+}

@@ -1,0 +1,44 @@
+.sidebar {
+  display: flex;
+  min-height: 100dvh;
+  flex-direction: column;
+  gap: 24px;
+  padding: 24px 18px;
+  background: #172033;
+  color: #ffffff;
+}
+
+.brand {
+  color: #ffffff;
+  font-size: 24px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.nav {
+  display: grid;
+  gap: 8px;
+}
+
+.nav a {
+  border-radius: 8px;
+  color: #dbe4f0;
+  padding: 10px 12px;
+  text-decoration: none;
+}
+
+.nav a:hover,
+.nav a.active {
+  background: #2a86ff;
+  color: #ffffff;
+}
+
+@media (max-width: 760px) {
+  .sidebar {
+    min-height: auto;
+  }
+
+  .nav {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  }
+}
