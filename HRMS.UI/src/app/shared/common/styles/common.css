@@ -1,0 +1,229 @@
+/* Common HRMS design utilities. Use these classes in any feature page. */
+:root {
+  --color-bg: #f5f7fb;
+  --color-surface: #ffffff;
+  --color-text: #172033;
+  --color-muted: #667085;
+  --color-border: #dfe7f1;
+  --color-border-strong: #cfd8e6;
+  --color-primary: #1d6f8f;
+  --color-primary-hover: #175f7b;
+  --shadow-panel: 0 14px 34px rgb(16 35 56 / 7%);
+  --radius-md: 8px;
+}
+
+.page-header,
+.section-header,
+.form-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.eyebrow {
+  margin: 0 0 6px;
+  color: var(--color-muted);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.subtitle,
+.muted {
+  color: var(--color-muted);
+}
+
+.subtitle {
+  margin-top: 8px;
+}
+
+.page-title,
+.page-header h2 {
+  margin: 0;
+  color: var(--color-text);
+  font-size: 32px;
+  line-height: 1.2;
+}
+
+.panel,
+.card,
+.form-panel,
+.table-panel {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-panel);
+}
+
+.panel,
+.form-panel {
+  padding: 24px;
+}
+
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.summary-card {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 20px;
+  background: var(--color-surface);
+  box-shadow: var(--shadow-panel);
+}
+
+.summary-card span,
+.summary-grid span {
+  color: var(--color-muted);
+}
+
+.summary-card strong,
+.summary-grid strong {
+  display: block;
+  margin-top: 10px;
+  color: var(--color-text);
+  font-size: 32px;
+}
+
+.btn,
+.primary-action,
+button {
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  font: inherit;
+  font-weight: 700;
+}
+
+.btn,
+.secondary-action {
+  border: 1px solid var(--color-border-strong);
+  background: var(--color-surface);
+  color: var(--color-text);
+  padding: 10px 12px;
+  text-decoration: none;
+}
+
+.btn-primary,
+.primary-action,
+button[type='submit'] {
+  border: 0;
+  background: var(--color-primary);
+  color: #ffffff;
+  padding: 11px 16px;
+}
+
+.btn-primary:hover,
+.primary-action:hover,
+button[type='submit']:hover {
+  background: var(--color-primary-hover);
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.form-field,
+label {
+  display: grid;
+  gap: 8px;
+  color: #344054;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+input,
+select,
+textarea {
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-md);
+  color: var(--color-text);
+  font: inherit;
+  outline: none;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgb(29 111 143 / 14%);
+}
+
+.table-wrap,
+.table-panel {
+  overflow-x: auto;
+}
+
+.data-table {
+  width: 100%;
+  min-width: 820px;
+  border-collapse: collapse;
+}
+
+.data-table th,
+.data-table td {
+  padding: 16px 18px;
+  border-bottom: 1px solid #edf1f6;
+  text-align: left;
+}
+
+.data-table th {
+  color: var(--color-muted);
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.status,
+.status-pill {
+  display: inline-flex;
+  border-radius: 999px;
+  padding: 6px 10px;
+  background: #e8f7ef;
+  color: #14804a;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.status.warning,
+.status.late,
+.status.leave {
+  background: #fff4df;
+  color: #a15c00;
+}
+
+.status.info,
+.status.probation {
+  background: #e9f0ff;
+  color: #265cc8;
+}
+
+@media (max-width: 1100px) {
+  .summary-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 760px) {
+  .page-header,
+  .section-header,
+  .form-actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .page-title,
+  .page-header h2 {
+    font-size: 26px;
+  }
+
+  .summary-grid,
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+}
