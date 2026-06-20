@@ -1,0 +1,25 @@
+# Angular / Node
+node_modules/
+dist/
+.angular/
+.env
+
+# Logs
+npm-debug.log*
+yarn-error.log*
+yarn-error.log
+
+# Windows
+Thumbs.db
+Desktop.ini
+
+# VS Code
+.vscode/
+
+# .NET Core
+bin/
+obj/
+.vs/
+*.user
+*.suo
+*.log
