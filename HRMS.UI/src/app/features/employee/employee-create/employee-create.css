@@ -14,7 +14,7 @@
 .eyebrow,
 .subtitle,
 .section-title p {
-  color: #667085;
+  color: var(--color-muted);
 }
 
 .eyebrow {
@@ -32,7 +32,7 @@ p {
 }
 
 h2 {
-  color: #172033;
+  color: var(--color-text);
   font-size: 32px;
 }
 
@@ -41,9 +41,9 @@ h2 {
 }
 
 a {
-  border: 1px solid #cfd8e6;
+  border: 1px solid var(--color-border-strong);
   border-radius: 8px;
-  color: #172033;
+  color: var(--color-text);
   padding: 10px 12px;
   font-weight: 700;
   text-decoration: none;
@@ -58,15 +58,15 @@ a {
   display: grid;
   grid-template-columns: 260px minmax(0, 1fr);
   gap: 28px;
-  border: 1px solid #dfe7f1;
+  border: 1px solid var(--color-border);
   border-radius: 8px;
   padding: 24px;
-  background: #ffffff;
+  background: var(--color-surface);
   box-shadow: 0 14px 34px rgb(16 35 56 / 7%);
 }
 
 .section-title h3 {
-  color: #172033;
+  color: var(--color-text);
   font-size: 20px;
 }
 
@@ -84,7 +84,7 @@ a {
 label {
   display: grid;
   gap: 8px;
-  color: #344054;
+  color: var(--color-text);
   font-size: 14px;
   font-weight: 700;
 }
@@ -93,10 +93,10 @@ input,
 select,
 textarea {
   width: 100%;
-  border: 1px solid #cfd8e6;
+  border: 1px solid var(--color-border-strong);
   border-radius: 8px;
   padding: 12px 14px;
-  color: #172033;
+  color: var(--color-text);
   font: inherit;
   outline: none;
 }
@@ -108,7 +108,7 @@ textarea {
 input:focus,
 select:focus,
 textarea:focus {
-  border-color: #1d6f8f;
+  border-color: var(--color-primary);
   box-shadow: 0 0 0 3px rgb(29 111 143 / 14%);
 }
 
@@ -118,25 +118,25 @@ textarea:focus {
 
 .form-actions {
   justify-content: flex-end;
-  border: 1px solid #dfe7f1;
+  border: 1px solid var(--color-border);
   border-radius: 8px;
   padding: 16px;
-  background: #ffffff;
+  background: var(--color-surface);
 }
 
 button {
   border: 0;
   border-radius: 8px;
   padding: 11px 16px;
-  background: #1d6f8f;
-  color: #ffffff;
+  background: var(--color-primary);
+  color: var(--color-surface);
   cursor: pointer;
   font: inherit;
   font-weight: 700;
 }
 
 button:hover {
-  background: #175f7b;
+  background: var(--color-primary-hover);
 }
 
 @media (max-width: 980px) {
@@ -164,3 +164,5 @@ button:hover {
     grid-column: auto;
   }
 }
+
+

@@ -9,11 +9,12 @@ import {
 } from '@angular/router';
 
 import { GlobalLoader } from './shared/common/components/global-loader/global-loader';
+import { AppearanceMenu } from './shared/common/components/appearance-menu/appearance-menu';
 import { LoadingService } from './shared/common/services/loading.service';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, GlobalLoader],
+  imports: [RouterOutlet, GlobalLoader, AppearanceMenu],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

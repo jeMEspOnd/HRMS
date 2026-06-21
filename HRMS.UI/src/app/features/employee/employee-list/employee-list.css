@@ -20,7 +20,7 @@
 .subtitle,
 .summary-card span,
 .employee-cell span {
-  color: #667085;
+  color: var(--color-muted);
 }
 
 .eyebrow {
@@ -37,7 +37,7 @@ p {
 }
 
 h2 {
-  color: #172033;
+  color: var(--color-text);
   font-size: 32px;
   line-height: 1.2;
 }
@@ -48,14 +48,14 @@ h2 {
 
 a {
   border-radius: 8px;
-  color: #1d6f8f;
+  color: var(--color-primary);
   font-weight: 700;
   text-decoration: none;
 }
 
 .primary-action {
-  background: #1d6f8f;
-  color: #ffffff;
+  background: var(--color-primary);
+  color: var(--color-surface);
   padding: 10px 14px;
 }
 
@@ -67,9 +67,9 @@ a {
 
 .summary-card,
 .directory-panel {
-  border: 1px solid #dfe7f1;
+  border: 1px solid var(--color-border);
   border-radius: 8px;
-  background: #ffffff;
+  background: var(--color-surface);
   box-shadow: 0 14px 34px rgb(16 35 56 / 7%);
 }
 
@@ -80,7 +80,7 @@ a {
 .summary-card strong {
   display: block;
   margin-top: 10px;
-  color: #172033;
+  color: var(--color-text);
   font-size: 32px;
 }
 
@@ -92,7 +92,7 @@ a {
   justify-content: space-between;
   gap: 16px;
   padding: 18px;
-  border-bottom: 1px solid #edf1f6;
+  border-bottom: 1px solid var(--color-border);
 }
 
 .search-field {
@@ -100,14 +100,14 @@ a {
   grid-template-columns: auto minmax(180px, 320px);
   align-items: center;
   gap: 8px;
-  border: 1px solid #cfd8e6;
+  border: 1px solid var(--color-border-strong);
   border-radius: 8px;
   padding: 0 12px;
-  background: #ffffff;
+  background: var(--color-surface);
 }
 
 .search-field span {
-  color: #667085;
+  color: var(--color-muted);
   font-size: 18px;
 }
 
@@ -115,16 +115,16 @@ input,
 select {
   min-height: 42px;
   border: 0;
-  color: #172033;
+  color: var(--color-text);
   font: inherit;
   outline: none;
 }
 
 select {
-  border: 1px solid #cfd8e6;
+  border: 1px solid var(--color-border-strong);
   border-radius: 8px;
   padding: 0 12px;
-  background: #ffffff;
+  background: var(--color-surface);
 }
 
 .filters {
@@ -144,23 +144,23 @@ table {
 th,
 td {
   padding: 16px 18px;
-  border-bottom: 1px solid #edf1f6;
+  border-bottom: 1px solid var(--color-border);
   text-align: left;
 }
 
 th {
-  color: #667085;
+  color: var(--color-muted);
   font-size: 13px;
   font-weight: 700;
   text-transform: uppercase;
 }
 
 td {
-  color: #344054;
+  color: var(--color-text);
 }
 
 tbody tr:hover {
-  background: #f8fafc;
+  background: color-mix(in srgb, var(--color-primary) 4%, var(--color-surface));
 }
 
 .employee-cell {
@@ -173,7 +173,7 @@ tbody tr:hover {
 }
 
 .employee-cell strong {
-  color: #172033;
+  color: var(--color-text);
 }
 
 .employee-cell span {
@@ -187,8 +187,8 @@ tbody tr:hover {
   height: 42px;
   place-items: center;
   border-radius: 8px;
-  background: #e7f4f7;
-  color: #1d6f8f;
+  background: color-mix(in srgb, var(--color-primary) 12%, var(--color-surface));
+  color: var(--color-primary);
   font-weight: 800;
 }
 
@@ -196,25 +196,25 @@ tbody tr:hover {
   display: inline-flex;
   border-radius: 999px;
   padding: 6px 10px;
-  background: #e8f7ef;
-  color: #14804a;
+  background: var(--color-success-bg);
+  color: var(--color-success);
   font-size: 13px;
   font-weight: 700;
 }
 
 .status.leave {
-  background: #fff4df;
-  color: #a15c00;
+  background: var(--color-warning-bg);
+  color: var(--color-warning);
 }
 
 .status.probation {
-  background: #e9f0ff;
-  color: #265cc8;
+  background: var(--color-info-bg);
+  color: var(--color-info);
 }
 
 .row-action {
   display: inline-flex;
-  border: 1px solid #cfd8e6;
+  border: 1px solid var(--color-border-strong);
   padding: 7px 10px;
 }
 
@@ -244,3 +244,5 @@ tbody tr:hover {
     grid-template-columns: auto 1fr;
   }
 }
+
+

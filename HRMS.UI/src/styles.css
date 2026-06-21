@@ -7,6 +7,6 @@
 body {
   margin: 0;
   color: var(--color-text);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--app-font-family);
   background: var(--color-bg);
 }

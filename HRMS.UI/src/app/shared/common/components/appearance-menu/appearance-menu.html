@@ -1,0 +1,68 @@
+<div class="appearance-menu">
+  <button
+    type="button"
+    class="appearance-button"
+    aria-label="Open appearance menu"
+    [attr.aria-expanded]="isOpen"
+    (click)="toggle()"
+  >
+    <span class="settings-icon" aria-hidden="true">
+      <span></span>
+    </span>
+    <span>{{ label() }}</span>
+  </button>
+
+  @if (isOpen) {
+    <div class="appearance-panel">
+      <section>
+        <h2>Theme</h2>
+        <div class="option-grid">
+          @for (theme of appearance.themes; track theme.value) {
+            <button
+              type="button"
+              class="option-button"
+              [class.active]="appearance.theme() === theme.value"
+              (click)="setTheme(theme.value)"
+            >
+              <span class="swatch" [class]="'swatch ' + theme.value"></span>
+              {{ theme.label }}
+            </button>
+          }
+        </div>
+      </section>
+
+      <section>
+        <h2>Layout</h2>
+        <div class="option-grid">
+          @for (layout of appearance.layouts; track layout.value) {
+            <button
+              type="button"
+              class="option-button"
+              [class.active]="appearance.layout() === layout.value"
+              (click)="setLayout(layout.value)"
+            >
+              {{ layout.label }}
+            </button>
+          }
+        </div>
+      </section>
+
+      <section>
+        <h2>Font</h2>
+        <div class="option-grid">
+          @for (font of appearance.fonts; track font.value) {
+            <button
+              type="button"
+              class="option-button font-option"
+              [class.active]="appearance.font() === font.value"
+              (click)="setFont(font.value)"
+            >
+              <span [class]="'font-preview ' + font.value">Aa</span>
+              {{ font.label }}
+            </button>
+          }
+        </div>
+      </section>
+    </div>
+  }
+</div>
